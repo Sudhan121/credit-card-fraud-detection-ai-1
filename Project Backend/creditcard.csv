@@ -1,0 +1,6 @@
+| target | id | date                 | query       | user  | Amount  | transaction\_type | fraud\_label |
+| ------ | -- | -------------------- | ----------- | ----- | ------- | ----------------- | ------------ |
+| 0      | 1  | 2025-05-09T12:00:00Z | transaction | User1 | 150.00  | Purchase          | 0            |
+| 1      | 2  | 2025-05-09T12:05:00Z | transaction | User2 | 1000.00 | Withdrawal        | 1            |
+| 0      | 3  | 2025-05-09T12:10:00Z | transaction | User3 | 20.00   | Purchase          | 0            |
+| 1      | 4  | 2025-05-09T12:15:00Z | transaction | User4 | 800.00  | Transfer          | 1            |

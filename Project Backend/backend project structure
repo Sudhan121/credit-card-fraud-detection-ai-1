@@ -1,0 +1,8 @@
+fraud_detection/
+├── app.py
+├── model.py
+├── static/
+│   └── sample_digit.png
+├── sentiment.csv
+├── requirements.txt
+├── runtime.txt

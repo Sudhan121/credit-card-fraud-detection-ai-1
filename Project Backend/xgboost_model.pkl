@@ -1,0 +1,4 @@
+import joblib
+joblib.dump(model, 'xgboost_model.pkl')
+joblib.dump(scaler, 'scaler.pkl')
+joblib.dump(list(X.columns), 'selected_features.pkl')
