@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Credit Card Fraud Detection</h1>
+        
+        <!-- Form to upload the file -->
+        <form id="uploadForm" action="/predict" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Upload Transaction Data (CSV)</label>
+                <input type="file" name="file" id="file" accept=".csv" required>
+            </div>
+            
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        
+        <div id="results" style="display: none;">
+            <h2>Prediction Results</h2>
+            <table id="predictionTable">
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Prediction</th>
+                        <th>Probability (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Results will be populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="errorMessage" style="display: none;">
+            <h3>Error occurred while processing your request. Please try again.</h3>
+        </div>
+    </div>
+
+    <script>
+        // Handle the form submission
+        document.getElementById('uploadForm').onsubmit = async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('file', document.getElementById('file').files[0]);
+
+            // Send the form data to the backend
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                // Clear any previous results
+                document.getElementById('predictionTable').getElementsByTagName('tbody')[0].innerHTML = '';
+                
+                // Populate the table with predictions
+                data.forEach(result => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${result.TransactionID}</td>
+                        <td>${result.Prediction === 1 ? 'Fraudulent' : 'Legitimate'}</td>
+                        <td>${result.Probability}%</td>
+                    `;
+                    document.getElementById('predictionTable').getElementsByTagName('tbody')[0].appendChild(row);
+                });
+
+                // Show results
+                document.getElementById('results').style.display = 'block';
+            } catch (error) {
+                document.getElementById('errorMessage').style.display = 'block';
+                console.error("Error:", error);
+            }
+        }
+    </script>
+</body>
+</html>
