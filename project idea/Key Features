@@ -1,0 +1,13 @@
+Input: Credit card transaction data (CSV format with anonymized features and labels).
+
+Preprocess data: Clean dataset, remove duplicates, scale 'Amount' & 'Time', and engineer new features (e.g., Hour, Log_Amount).
+
+Handle class imbalance: Use SMOTE to oversample the minority (fraud) class.
+
+Train classification models: Apply Logistic Regression, Random Forest, XGBoost, and optionally AutoEncoder for anomaly detection.
+
+Evaluate performance: Use precision, recall, F1-score, confusion matrix, and ROC-AUC to assess model quality.
+
+Output: Predict fraudulent vs. legitimate transactions and visualize results on an interactive dashboard.
+
+Deploy: Host model using Streamlit to simulate real-time fraud detection and allow user interaction.

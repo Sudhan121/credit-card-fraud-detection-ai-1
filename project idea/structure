@@ -1,0 +1,15 @@
+fraud_detection_app/
+├── app.py               # Main Flask application
+├── model.py             # Model logic for fraud detection
+├── requirements.txt     # Python dependencies
+├── runtime.txt          # Python version for deployment
+├── Procfile             # For deployment platforms like Heroku
+├── model/
+│   ├── xgboost_model.pkl  # Pre-trained XGBoost model
+│   ├── scaler.pkl         # StandardScaler used during training
+│   └── selected_features.pkl  # List of selected features
+├── templates/
+│   └── index.html         # HTML file for the frontend
+├── static/                # Static files (CSS, JS, images)
+│   └── style.css          # Optional styling for the frontend
+└── _pycache_/             # Python cache files (ignore)

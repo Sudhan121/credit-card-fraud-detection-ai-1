@@ -1,0 +1,80 @@
+Programming Language
+
+    Python 3.8+
+
+Development Environment / IDE
+
+    Visual Studio Code (VS Code)
+
+    Jupyter Notebook (for experimentation)
+
+    Google Colab (for model training and visualization)
+
+Libraries & Frameworks
+
+    Data Handling & Preprocessing:
+
+    pandas
+
+    numpy
+
+    imbalanced-learn (for SMOTE)
+
+Visualization:
+
+    matplotlib
+
+    seaborn
+
+    plotly (optional, for interactive dashboards)
+
+Machine Learning:
+
+    scikit-learn
+
+    XGBoost
+
+    joblib (for model serialization)
+
+
+Model Evaluation Metrics
+
+    Accuracy
+
+    Precision, Recall, F1-Score
+
+    Confusion Matrix
+
+    ROC-AUC Curve
+
+Feature Engineering Tools
+
+    StandardScaler (scikit-learn)
+
+    SMOTE (Synthetic Minority Over-sampling Technique)
+
+    log transformation (for skewed amount data)
+
+Deployment & Interface
+
+    Streamlit (for real-time simulation dashboard)
+
+    Flask (optional, for API deployment)
+
+    HTML + CSS (if a custom frontend is used)
+
+    GitHub (version control and collaboration)
+
+Hosting Platforms
+
+    Streamlit Community Cloud (dashboard deployment)
+
+    Render / Railway.app / Deta (Flask API deployment, optional)
+
+Visualization & Documentation Tools
+
+    draw.io / Lucidchart (project workflow diagrams)
+
+    Canva / PowerPoint (presentation assets)
+
+    Graphviz (for generating programmatic diagrams)

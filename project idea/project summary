@@ -1,0 +1,18 @@
+This project aims to build a robust machine learning-based web application that detects fraudulent credit card transactions in real-time. Using a highly imbalanced dataset from Kaggle, we apply preprocessing, feature engineering, and model training techniques to create a binary classification system.
+
+We trained multiple models including Logistic Regression, Random Forest, and XGBoost, ultimately selecting XGBoost for its superior precision and recall. To handle class imbalance, SMOTE oversampling was used, and PCA-transformed features were scaled for better model performance.
+
+The application is built with Flask for the backend and HTML/CSS/JS for the frontend, allowing users to upload CSV files and receive instant predictions (Fraudulent vs. Legitimate) with probabilities. The model, scaler, and selected feature list are stored and loaded dynamically to ensure accurate preprocessing.
+
+The app can be deployed to platforms like Render or Heroku and is designed to help financial institutions and analysts flag suspicious activity quickly, thus reducing financial losses and improving customer trust.
+
+Key Highlights:
+
+Real-time fraud prediction with XGBoost
+
+SMOTE-based class balancing
+
+Frontend upload + results dashboard
+
+Modular, deployable with Flask + Gunicorn
+
